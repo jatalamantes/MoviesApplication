@@ -1,0 +1,76 @@
+Class Movie:
+String title
+int year
+double sales
+
+Constructor(title, year, sales)
+
+getters & setters
+
+*********************************************************
+Class Validation
+* Each validate method returns an empty string if the method parameter matches the criteria
+  represented by a regular expression or returns a string containing the error message about the
+  validation if the input is invalid.
+
+static validateTitle(title)
+    Title can’t be empty and can contain letters, numbers, hyphens, colons, periods, and
+    spaces. The first letter must be capitalized.
+
+static validateYear(year)
+    Year can’t be empty and only contains digits.
+
+static validateSales(sales)
+    Sales can’t be empty and can only contain digits. The decimal point is optional. The
+    number of decimal places can be 0 or more.
+
+*********************************************************
+Database Connection Class
+* Create a connection to the MovieDB database
+
+*********************************************************
+Controller Class
+
+eventHandler Create Table (menu item)
+* Create an MS Access database MovieDB if the database doesn’t exist.
+* Create a table movie with three fields corresponding to the three attributes of a movie.
+* Suggestion: After running Create Table once, you can add the DROP TABLE command before the CREATE TABLE
+  command to avoid the runtime exception when “Create Table” is selected multiple times in program testing.
+
+--- Create FileChooser method for Import and Export JSON
+
+eventHandler Import JSON (menu item)
+* Open a FileChooser for the user to choose a JSON file
+* Read and Insert the data into the movie table(file reader)
+* Display all the records in the movie table in the TableView
+
+eventHandler Export JSON (menu item)
+* Open a FileChooser for the user to choose a JSON file
+* Export the movie table in a JSON format(use file writer)
+
+eventHandler List Records (button)
+* Connect to MovieDB
+* Displays all the records from the movie table in the TableView.
+
+eventHandler Add Records (button)
+* Read user input for a movie from the three text fields
+* If input valid
+    Add record to table
+    Clear fields(textField.clear)
+  Else
+    alert(Error message in pop up. Must say what the issue is)
+
+eventHandler Delete Record (button)
+* Allow user to select a row in the TableView
+* Get selected row
+* Delete from movie table
+
+eventHandler Help (menu item)
+* Display a dialog with your name and the integrity statement.
+    “I certify that this submission is my original work”
+
+
+
+
+
+
